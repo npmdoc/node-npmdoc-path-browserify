@@ -1,0 +1,912 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/substack/path-browserify"
+
+    >path-browserify (v0.0.0)</a>
+</h1>
+<h4>the path module from node core for browsers</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify">module path-browserify</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.basename">
+            function <span class="apidocSignatureSpan">path-browserify.</span>basename
+            <span class="apidocSignatureSpan">(path, ext)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.dirname">
+            function <span class="apidocSignatureSpan">path-browserify.</span>dirname
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.extname">
+            function <span class="apidocSignatureSpan">path-browserify.</span>extname
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.isAbsolute">
+            function <span class="apidocSignatureSpan">path-browserify.</span>isAbsolute
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.join">
+            function <span class="apidocSignatureSpan">path-browserify.</span>join
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.normalize">
+            function <span class="apidocSignatureSpan">path-browserify.</span>normalize
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.relative">
+            function <span class="apidocSignatureSpan">path-browserify.</span>relative
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.resolve">
+            function <span class="apidocSignatureSpan">path-browserify.</span>resolve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">path-browserify.</span>delimiter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">path-browserify.</span>sep</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.basename">module path-browserify.basename</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.basename.basename">
+            function <span class="apidocSignatureSpan">path-browserify.</span>basename
+            <span class="apidocSignatureSpan">(path, ext)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.dirname">module path-browserify.dirname</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.dirname.dirname">
+            function <span class="apidocSignatureSpan">path-browserify.</span>dirname
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.extname">module path-browserify.extname</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.extname.extname">
+            function <span class="apidocSignatureSpan">path-browserify.</span>extname
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.isAbsolute">module path-browserify.isAbsolute</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.isAbsolute.isAbsolute">
+            function <span class="apidocSignatureSpan">path-browserify.</span>isAbsolute
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.join">module path-browserify.join</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.join.join">
+            function <span class="apidocSignatureSpan">path-browserify.</span>join
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.normalize">module path-browserify.normalize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.normalize.normalize">
+            function <span class="apidocSignatureSpan">path-browserify.</span>normalize
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.relative">module path-browserify.relative</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.relative.relative">
+            function <span class="apidocSignatureSpan">path-browserify.</span>relative
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-browserify.resolve">module path-browserify.resolve</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-browserify.resolve.resolve">
+            function <span class="apidocSignatureSpan">path-browserify.</span>resolve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify" id="apidoc.module.path-browserify">module path-browserify</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.basename" id="apidoc.element.path-browserify.basename">
+        function <span class="apidocSignatureSpan">path-browserify.</span>basename
+        <span class="apidocSignatureSpan">(path, ext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">basename = function (path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext &#x26;&#x26; f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.dirname" id="apidoc.element.path-browserify.dirname">
+        function <span class="apidocSignatureSpan">path-browserify.</span>dirname
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dirname = function (path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root &#x26;&#x26; !dir) {
+    // No dirname whatsoever
+    return &#x27;.&#x27;;
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.extname" id="apidoc.element.path-browserify.extname">
+        function <span class="apidocSignatureSpan">path-browserify.</span>extname
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extname = function (path) {
+  return splitPath(path)[3];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.isAbsolute" id="apidoc.element.path-browserify.isAbsolute">
+        function <span class="apidocSignatureSpan">path-browserify.</span>isAbsolute
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAbsolute = function (path) {
+  return path.charAt(0) === &#x27;/&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+var isAbsolute = exports.<span class="apidocCodeKeywordSpan">isAbsolute</span>(path),
+    trailingSlash = substr(path, -1) === &#x27;/&#x27;;
+
+// Normalize the path
+path = normalizeArray(filter(path.split(&#x27;/&#x27;), function(p) {
+  return !!p;
+}), !isAbsolute).join(&#x27;/&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.join" id="apidoc.element.path-browserify.join">
+        function <span class="apidocSignatureSpan">path-browserify.</span>join
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join = function () {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== &#x27;string&#x27;) {
+      throw new TypeError(&#x27;Arguments to path.join must be strings&#x27;);
+    }
+    return p;
+  }).join(&#x27;/&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split(&#x27;/&#x27;), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).<span class="apidocCodeKeywordSpan">join</span>(&#x27;/&#x27;);
+
+  return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.normalize" id="apidoc.element.path-browserify.normalize">
+        function <span class="apidocSignatureSpan">path-browserify.</span>normalize
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalize = function (path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === &#x27;/&#x27;;
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split(&#x27;/&#x27;), function(p) {
+    return !!p;
+  }), !isAbsolute).join(&#x27;/&#x27;);
+
+  if (!path &#x26;&#x26; !isAbsolute) {
+    path = &#x27;.&#x27;;
+  }
+  if (path &#x26;&#x26; trailingSlash) {
+    path += &#x27;/&#x27;;
+  }
+
+  return (isAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+resolvedPath = normalizeArray(filter(resolvedPath.split(&#x27;/&#x27;), function(p) {
+  return !!p;
+}), !resolvedAbsolute).join(&#x27;/&#x27;);
+
+return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+};
+
+// path.<span class="apidocCodeKeywordSpan">normalize</span>(path)
+// posix version
+exports.normalize = function(path) {
+var isAbsolute = exports.isAbsolute(path),
+    trailingSlash = substr(path, -1) === &#x27;/&#x27;;
+
+// Normalize the path
+path = normalizeArray(filter(path.split(&#x27;/&#x27;), function(p) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.relative" id="apidoc.element.path-browserify.relative">
+        function <span class="apidocSignatureSpan">path-browserify.</span>relative
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relative = function (from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start &#x3c; arr.length; start++) {
+      if (arr[start] !== &#x27;&#x27;) break;
+    }
+
+    var end = arr.length - 1;
+    for (; end &#x3e;= 0; end--) {
+      if (arr[end] !== &#x27;&#x27;) break;
+    }
+
+    if (start &#x3e; end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split(&#x27;/&#x27;));
+  var toParts = trim(to.split(&#x27;/&#x27;));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i &#x3c; length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i &#x3c; fromParts.length; i++) {
+    outputParts.push(&#x27;..&#x27;);
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join(&#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw new TypeError(&#x27;Arguments to path.join must be strings&#x27;);
+  }
+  return p;
+}).join(&#x27;/&#x27;));
+};
+
+
+// path.<span class="apidocCodeKeywordSpan">relative</span>(from, to)
+// posix version
+exports.relative = function(from, to) {
+from = exports.resolve(from).substr(1);
+to = exports.resolve(to).substr(1);
+
+function trim(arr) {
+  var start = 0;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.resolve" id="apidoc.element.path-browserify.resolve">
+        function <span class="apidocSignatureSpan">path-browserify.</span>resolve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function () {
+  var resolvedPath = &#x27;&#x27;,
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i &#x3e;= -1 &#x26;&#x26; !resolvedAbsolute; i--) {
+    var path = (i &#x3e;= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== &#x27;string&#x27;) {
+      throw new TypeError(&#x27;Arguments to path.resolve must be strings&#x27;);
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + &#x27;/&#x27; + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === &#x27;/&#x27;;
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split(&#x27;/&#x27;), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join(&#x27;/&#x27;);
+
+  return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// &#x27;root&#x27; is just a slash, or nothing.
+var splitPathRe =
+  /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+return splitPathRe.exec(filename).slice(1);
+};
+
+// path.<span class="apidocCodeKeywordSpan">resolve</span>([from ...], to)
+// posix version
+exports.resolve = function() {
+var resolvedPath = &#x27;&#x27;,
+    resolvedAbsolute = false;
+
+for (var i = arguments.length - 1; i &#x3e;= -1 &#x26;&#x26; !resolvedAbsolute; i--) {
+  var path = (i &#x3e;= 0) ? arguments[i] : process.cwd();
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.basename" id="apidoc.module.path-browserify.basename">module path-browserify.basename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.basename.basename" id="apidoc.element.path-browserify.basename.basename">
+        function <span class="apidocSignatureSpan">path-browserify.</span>basename
+        <span class="apidocSignatureSpan">(path, ext)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">basename = function (path, ext) {
+  var f = splitPath(path)[2];
+  // TODO: make this comparison case-insensitive on windows?
+  if (ext &#x26;&#x26; f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.dirname" id="apidoc.module.path-browserify.dirname">module path-browserify.dirname</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.dirname.dirname" id="apidoc.element.path-browserify.dirname.dirname">
+        function <span class="apidocSignatureSpan">path-browserify.</span>dirname
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dirname = function (path) {
+  var result = splitPath(path),
+      root = result[0],
+      dir = result[1];
+
+  if (!root &#x26;&#x26; !dir) {
+    // No dirname whatsoever
+    return &#x27;.&#x27;;
+  }
+
+  if (dir) {
+    // It has a dirname, strip trailing slash
+    dir = dir.substr(0, dir.length - 1);
+  }
+
+  return root + dir;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.extname" id="apidoc.module.path-browserify.extname">module path-browserify.extname</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.extname.extname" id="apidoc.element.path-browserify.extname.extname">
+        function <span class="apidocSignatureSpan">path-browserify.</span>extname
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extname = function (path) {
+  return splitPath(path)[3];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.isAbsolute" id="apidoc.module.path-browserify.isAbsolute">module path-browserify.isAbsolute</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.isAbsolute.isAbsolute" id="apidoc.element.path-browserify.isAbsolute.isAbsolute">
+        function <span class="apidocSignatureSpan">path-browserify.</span>isAbsolute
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAbsolute = function (path) {
+  return path.charAt(0) === &#x27;/&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+var isAbsolute = exports.<span class="apidocCodeKeywordSpan">isAbsolute</span>(path),
+    trailingSlash = substr(path, -1) === &#x27;/&#x27;;
+
+// Normalize the path
+path = normalizeArray(filter(path.split(&#x27;/&#x27;), function(p) {
+  return !!p;
+}), !isAbsolute).join(&#x27;/&#x27;);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.join" id="apidoc.module.path-browserify.join">module path-browserify.join</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.join.join" id="apidoc.element.path-browserify.join.join">
+        function <span class="apidocSignatureSpan">path-browserify.</span>join
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join = function () {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== &#x27;string&#x27;) {
+      throw new TypeError(&#x27;Arguments to path.join must be strings&#x27;);
+    }
+    return p;
+  }).join(&#x27;/&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split(&#x27;/&#x27;), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).<span class="apidocCodeKeywordSpan">join</span>(&#x27;/&#x27;);
+
+  return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.normalize" id="apidoc.module.path-browserify.normalize">module path-browserify.normalize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.normalize.normalize" id="apidoc.element.path-browserify.normalize.normalize">
+        function <span class="apidocSignatureSpan">path-browserify.</span>normalize
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalize = function (path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === &#x27;/&#x27;;
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split(&#x27;/&#x27;), function(p) {
+    return !!p;
+  }), !isAbsolute).join(&#x27;/&#x27;);
+
+  if (!path &#x26;&#x26; !isAbsolute) {
+    path = &#x27;.&#x27;;
+  }
+  if (path &#x26;&#x26; trailingSlash) {
+    path += &#x27;/&#x27;;
+  }
+
+  return (isAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+resolvedPath = normalizeArray(filter(resolvedPath.split(&#x27;/&#x27;), function(p) {
+  return !!p;
+}), !resolvedAbsolute).join(&#x27;/&#x27;);
+
+return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+};
+
+// path.<span class="apidocCodeKeywordSpan">normalize</span>(path)
+// posix version
+exports.normalize = function(path) {
+var isAbsolute = exports.isAbsolute(path),
+    trailingSlash = substr(path, -1) === &#x27;/&#x27;;
+
+// Normalize the path
+path = normalizeArray(filter(path.split(&#x27;/&#x27;), function(p) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.relative" id="apidoc.module.path-browserify.relative">module path-browserify.relative</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.relative.relative" id="apidoc.element.path-browserify.relative.relative">
+        function <span class="apidocSignatureSpan">path-browserify.</span>relative
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relative = function (from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start &#x3c; arr.length; start++) {
+      if (arr[start] !== &#x27;&#x27;) break;
+    }
+
+    var end = arr.length - 1;
+    for (; end &#x3e;= 0; end--) {
+      if (arr[end] !== &#x27;&#x27;) break;
+    }
+
+    if (start &#x3e; end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split(&#x27;/&#x27;));
+  var toParts = trim(to.split(&#x27;/&#x27;));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i &#x3c; length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i &#x3c; fromParts.length; i++) {
+    outputParts.push(&#x27;..&#x27;);
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join(&#x27;/&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw new TypeError(&#x27;Arguments to path.join must be strings&#x27;);
+  }
+  return p;
+}).join(&#x27;/&#x27;));
+};
+
+
+// path.<span class="apidocCodeKeywordSpan">relative</span>(from, to)
+// posix version
+exports.relative = function(from, to) {
+from = exports.resolve(from).substr(1);
+to = exports.resolve(to).substr(1);
+
+function trim(arr) {
+  var start = 0;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-browserify.resolve" id="apidoc.module.path-browserify.resolve">module path-browserify.resolve</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-browserify.resolve.resolve" id="apidoc.element.path-browserify.resolve.resolve">
+        function <span class="apidocSignatureSpan">path-browserify.</span>resolve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function () {
+  var resolvedPath = &#x27;&#x27;,
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i &#x3e;= -1 &#x26;&#x26; !resolvedAbsolute; i--) {
+    var path = (i &#x3e;= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== &#x27;string&#x27;) {
+      throw new TypeError(&#x27;Arguments to path.resolve must be strings&#x27;);
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + &#x27;/&#x27; + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === &#x27;/&#x27;;
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split(&#x27;/&#x27;), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join(&#x27;/&#x27;);
+
+  return ((resolvedAbsolute ? &#x27;/&#x27; : &#x27;&#x27;) + resolvedPath) || &#x27;.&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// &#x27;root&#x27; is just a slash, or nothing.
+var splitPathRe =
+  /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+var splitPath = function(filename) {
+return splitPathRe.exec(filename).slice(1);
+};
+
+// path.<span class="apidocCodeKeywordSpan">resolve</span>([from ...], to)
+// posix version
+exports.resolve = function() {
+var resolvedPath = &#x27;&#x27;,
+    resolvedAbsolute = false;
+
+for (var i = arguments.length - 1; i &#x3e;= -1 &#x26;&#x26; !resolvedAbsolute; i--) {
+  var path = (i &#x3e;= 0) ? arguments[i] : process.cwd();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
