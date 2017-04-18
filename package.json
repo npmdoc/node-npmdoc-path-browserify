@@ -1,1 +1,39 @@
-{     "devDependencies": {         "path-browserify": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-path-browserify",     "homepage": "https://github.com/npmdoc/node-npmdoc-path-browserify",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-path-browserify.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "api documentation for [path-browserify (v0.0.0)](https://github.com/substack/path-browserify) [![npm package](https://img.shields.io/npm/v/npmdoc-path-browserify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-path-browserify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-path-browserify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-path-browserify)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "path-browserify": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-path-browserify",
+    "keywords": [
+        "documentation",
+        "path-browserify"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_path_browserify.js",
+    "name": "npmdoc-path-browserify",
+    "nameAlias": "npmdoc_path_browserify",
+    "nameOriginal": "npmdoc-path-browserify",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-path-browserify.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
