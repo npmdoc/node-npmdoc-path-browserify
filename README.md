@@ -1,4 +1,7 @@
-# api documentation for  [path-browserify (v0.0.0)](https://github.com/substack/path-browserify)  [![npm package](https://img.shields.io/npm/v/npmdoc-path-browserify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-path-browserify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-path-browserify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-path-browserify)
+# npmdoc-path-browserify
+
+#### basic api documentation for  [path-browserify (v0.0.0)](https://github.com/substack/path-browserify)  [![npm package](https://img.shields.io/npm/v/npmdoc-path-browserify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-path-browserify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-path-browserify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-path-browserify)
+
 #### the path module from node core for browsers
 
 [![NPM](https://nodei.co/npm/path-browserify.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/path-browserify)
@@ -57,7 +60,8 @@
     "scripts": {
         "test": "tape test/*.js"
     },
-    "version": "0.0.0"
+    "version": "0.0.0",
+    "bin": {}
 }
 ```
 
